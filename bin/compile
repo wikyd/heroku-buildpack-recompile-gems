@@ -13,7 +13,7 @@ if [ ! -s $1/.recompile_gems ]; then
   exit 0
 fi
 
-cd $1
+cd $2
 
 while read gem; do
   if [ -n "$gem" ]; then # incase ensure_newline_at_eof_on_save is enabled
