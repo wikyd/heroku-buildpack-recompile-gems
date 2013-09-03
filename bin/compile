@@ -13,12 +13,12 @@ if [ ! -s $1/.recompile_gems ]; then
   exit 0
 fi
 
-cd $2
+cd $1
 
 while read gem; do
   if [ -n "$gem" ]; then # incase ensure_newline_at_eof_on_save is enabled
     echo Removing gem $gem | indent
-    ls vendor/bundle/$gem
-    rm -rf vendor/bundle/$gem
+    ls $2/vendor/bundle/$gem
+    rm -rf $2/vendor/bundle/$gem
   fi
 done < .recompile_gems
